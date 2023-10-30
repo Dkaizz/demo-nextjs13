@@ -12,6 +12,7 @@ export default function Home() {
           Tech Blog Posts With CSR
         </Link>
         <br />
+        <a href="https://demo-csr-react.vercel.app/" />
       </p>
     </div>
   );
