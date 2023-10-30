@@ -8,7 +8,7 @@ export default function PostLayout({
   return (
     <section>
       <div className="bg-blue-600 text-white p-6">
-        <Link href={"/post"} className="underline">
+        <Link href={"/postcsr"} className="underline">
           All Posts
         </Link>
       </div>

@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-red-400 text-white">
-          Header {"  "}
+        <div className="bg-red-400 text-white flex items-center justify-between p-5">
+          Header
           <Link href={"/"} className="underline">
             Back to Home
           </Link>

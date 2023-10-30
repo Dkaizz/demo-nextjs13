@@ -8,13 +8,10 @@ export default function Home() {
           Tech Blog Posts
         </Link>
         <br />
-        <Link href={"/counter"} className="hover:underline">
-          Counter App
+        <Link href={"/postcsr"} className="hover:underline">
+          Tech Blog Posts With CSR
         </Link>
         <br />
-        <Link href={"/about"} className="hover:underline">
-          About
-        </Link>
       </p>
     </div>
   );
