@@ -4,11 +4,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "All Posts",
-  description: "Our Tech Blog Posts",
-};
-
 type Post = {
   userId: number;
   id: number;
