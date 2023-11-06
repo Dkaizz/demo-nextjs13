@@ -1,5 +1,6 @@
 "use client";
 
+import { apiBase } from "@/api";
 import { Metadata } from "next";
 import { useEffect, useState } from "react";
 
@@ -27,7 +28,7 @@ export default async function Post(props: PageProps) {
 
   useEffect(() => {
     // effect
-    fetch("https://jsonplaceholder.typicode.com/posts/" + id)
+    fetch(apiBase + "posts/" + id)
       .then((response) => response.json())
       .then((data: Post) => setPost(data))
       .catch((error) => {

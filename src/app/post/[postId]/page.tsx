@@ -1,3 +1,4 @@
+import { apiBase } from "@/api";
 import { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -21,17 +22,13 @@ type Post = {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.postId}`
-  );
+  const res = await fetch(`${apiBase}posts/${params.postId}`);
   const data = (await res.json()) as Post;
   return { title: data.title };
 }
 
 async function getPost(id: number) {
-  const data = (
-    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  ).json();
+  const data = (await fetch(`${apiBase}posts/${id}`)).json();
   return data;
 }
 interface PageProps {

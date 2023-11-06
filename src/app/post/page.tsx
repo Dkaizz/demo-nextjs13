@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Metadata } from "next";
+import { apiBase } from "@/api";
 
 export const metadata: Metadata = {
   title: "All Posts",
@@ -15,20 +16,18 @@ type Post = {
 };
 
 async function getAllPosts() {
-  const data = (
-    await fetch("https://jsonplaceholder.typicode.com/posts")
-  ).json();
+  const data = (await fetch(apiBase + "posts?limit=150")).json();
   return data;
 }
 
 export default async function Posts() {
   const allPosts = getAllPosts();
-  const [posts] = await Promise.all([allPosts]);
+  const [res] = await Promise.all([allPosts]);
   return (
     <div className="flex flex-col items-center p-5">
       <h1 className="text-3xl font-bold">All Posts</h1>
       <div className="flex flex-wrap justify-around">
-        {posts.map((post: Post) => (
+        {res.posts.map((post: Post) => (
           <div
             key={post.id}
             className="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-purple-950"
